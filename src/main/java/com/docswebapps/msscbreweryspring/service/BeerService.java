@@ -13,4 +13,21 @@ public class BeerService {
                 .upc(1234L)
                 .build();
     }
+
+    public UUID createBeerDto(BeerDto beerDto) {
+        BeerDto newBeer = BeerDto.builder()
+                .id(UUID.randomUUID())
+                .beerName(beerDto.getBeerName())
+                .beerStyle(beerDto.getBeerStyle())
+                .upc(1234L)
+                .build();
+
+        return newBeer.getId();
+    }
+
+    public void updateBeerDto(BeerDto beerDto) {
+    }
+
+    public void deleteDto(UUID beerId) {
+    }
 }
